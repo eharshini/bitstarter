@@ -58,7 +58,6 @@ if(require.main == module) {
        .option('-f, --file <html_file>', 'index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
        .option('-u, --url <url>', 'url to check', URL_DEFAULT)
        .parse(process.argv);
-console.log(program.url);
 if(program.url) {
   rest.get(program.url).on('complete', function(result) {
      fs.writeFileSync("myfile.html", result);
